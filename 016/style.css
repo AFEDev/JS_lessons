@@ -1,0 +1,41 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: lightyellow;
+}
+
+.tevas {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rebeccapurple;
+}
+
+.vaikas {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: lightskyblue;
+  left: 500px;
+  top: 500px;
+}
+
+.vaikas2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: lightskyblue;
+  left: 700px;
+  top: 600px;
+}
+
+i {
+  font-size: 60px;
+  margin: 700px;
+  text-align: center;
+  line-height: 1.5;
+}

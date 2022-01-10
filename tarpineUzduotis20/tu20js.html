@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="tu20.js" defer></script>
+    <title>Cats Caffe</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: blanchedalmond;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      h1 {
+        color: indianred;
+        letter-spacing: 4px;
+        font-size: 60px;
+      }
+
+      ol {
+        font-size: 30px;
+        letter-spacing: 2px;
+        color: cornflowerblue;
+      }
+
+      li {
+        cursor: pointer;
+      }
+
+      li span {
+        color: hotpink;
+        font-weight: bold;
+        padding-left: 10px;
+      }
+
+      li:hover {
+        cursor: pointer;
+        color: firebrick;
+        transition: color 0.8s;
+      }
+
+      li::before {
+        content: "♥";
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcom to our Cat Caffe</h1>
+    <ol>
+      <li class="black">Murka</li>
+      <li class="black">Blusius</li>
+      <li class="gray">Ūkas</li>
+      <li class="ginger">Keris</li>
+      <li class="white">Pūkutis</li>
+      <li class="white">Meilutė</li>
+      <li class="gray">Princesė</li>
+      <li class="black">Kudlius</li>
+    </ol>
+  </body>
+</html>

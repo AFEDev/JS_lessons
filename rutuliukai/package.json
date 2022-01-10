@@ -1,0 +1,28 @@
+{
+  "name": "rutuliukai",
+  "version": "1.0.0",
+  "description": "Rutuliuku zaidimo beta versijos beta versija",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+    },
+  "keywords": [
+    "game"
+  ],
+  "author": "Algirdas",
+  "license": "MIT",
+  "dependencies": {
+    "laravel-mix": "^6.0.39"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.45.0",
+    "sass-loader": "^12.1.0"
+  }
+}
