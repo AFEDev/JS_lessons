@@ -85,6 +85,8 @@ fetch(
       });
     });
 
+    //chart --------------------------------------
+
     const labels = filterDate;
 
     const data = {
@@ -166,6 +168,10 @@ fetch(
 
     const myChart = new Chart(document.getElementById("myChart"), config);
 
+    //chart ends--------------------------------
+
+    //values for data selector------------------------------
+
     const date__start_value = document.getElementById("date__start_value");
     const date__end_value = document.getElementById("date__end_value");
 
@@ -183,16 +189,7 @@ fetch(
       a = this.value;
     });
 
-    const getDaysArray = function (start, end) {
-      for (
-        filterDate = [], dt = new Date(start);
-        dt <= end;
-        dt.setDate(dt.getDate() + 1)
-      ) {
-        filterDate.push(new Date(dt));
-      }
-      return filterDate;
-    };
+    //data filter experimental
 
     function hammingDist(str1, x) {
       for (let i = 0; i < str1.length; i++) {
