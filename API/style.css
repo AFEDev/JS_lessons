@@ -27,14 +27,6 @@
   display: flex;
   flex-flow: column;
   margin: 0px 20px;
-  /* border: 2px solid red; */
-  /* position: absolute; */
-  /* background-image: url("img/photo-1535905557558-afc4877a26fc.jfif");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-attachment: fixed;
-    background-size: cover;
-    background-blend-mode: lighten; */
   background-color: black;
 }
 
