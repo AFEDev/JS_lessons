@@ -2,6 +2,7 @@ let book = [];
 let typ = [];
 const main = document.querySelector("main");
 
+
 main.classList.add("loader_big");
 
 fetch("https://in3.dev/knygos/")
@@ -81,30 +82,34 @@ const creatCard = () => {
     const price = document.createElement("h4");
     const type = document.createElement("div");
     const bg = document.createElement("div"); //<----- buvo h4
+    type.classList.add("loader");
     title.innerText = element.title;
     author.innerText = element.author;
     price.innerText = element.price + " €";
-    type.classList.add("loader");
+    type.classList.remove("loader_big");
     //type.innerText = element.type;
+   
     fetch("https://in3.dev/knygos/types/")
       .then((response) => response.json())
       .then((types) => {
         typ = types;
+        type.classList.remove("loader");
         typ.forEach((t) => {
           if (element.type == t.id) {
-            type.classList.remove("loader");
-            type.classList.add("loader_text");
             type.innerText = t.title;
           }
         });
+       
+       
       });
     title.classList.add("book_title");
     cardColumn.classList.add("cards__column");
-      
+    
     main.classList.add("cards__row");
     bg.classList.add("cards__column-bg");
     cardImage.classList.add("cards__image");
     cardText.classList.add("cards__text");
+    main.classList.remove("loader_big");
     main.appendChild(bg);
     bg.appendChild(cardColumn);
     cardColumn.appendChild(cardImage);
