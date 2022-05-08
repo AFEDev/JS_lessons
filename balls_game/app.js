@@ -24,11 +24,9 @@ let arrayNumbers = [];
  * @returns return array of unique unsorted numbers 
  */
 function randUniqe(quantity, max) {
-  if (max <= quantity) {
   const set = new Set();
   while (set.size < quantity) {
     set.add(Math.floor(Math.random() * max) + 1);
-  }
   }
   return (arrayNumbers = Array.from(set));
 }

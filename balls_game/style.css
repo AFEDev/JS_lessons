@@ -68,11 +68,13 @@ button:hover:after {
     width: 15px;
     height: 15px;
   }
+
   50% {
     transform: translateX(-55px) translateY(-30px);
     width: 5px;
     height: 5px;
   }
+
   75% {
     transform: translateX(-85px) translateY(-35px);
     width: 15px;
@@ -86,17 +88,20 @@ button:hover:after {
     width: 15px;
     height: 15px;
   }
+
   50% {
     transform: translateX(-55px) translateY(-30px);
     width: 5px;
     height: 5px;
   }
+
   75% {
     transform: translateX(-85px) translateY(-35px);
     width: 15px;
     height: 15px;
   }
 }
+
 button:focus {
   outline: none;
 }
@@ -118,9 +123,25 @@ main {
   flex: 1 1 auto;
 }
 
+
+@media only screen and (max-width: 700px) {
+  main {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .container {
   position: relative;
   width: 40%;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    width: 90%;
+  }
+
 }
 
 .container:after {
@@ -142,10 +163,22 @@ main {
   padding: 1%;
 }
 
+@media only screen and (max-width: 700px) {
+  .banner {
+    font-size: 16px;
+    width: 80%;
+    left: 10%;
+    top: 20%;
+  }
+}
+
+
 .banner:after {
   content: "";
   display: block;
 }
+
+
 
 h3 {
   padding-bottom: 20px;
@@ -184,8 +217,6 @@ h3 {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 100%;
   display: flex;
-  /* flex: 1; */
-  /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
   font-size: 40px;
@@ -195,14 +226,24 @@ h3 {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1000px) {
+  .kamuoliukas {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .kamuoliukas {
+    font-size: 24px;
+  }
+
+}
+
 .squereStyle {
   width: 20%;
   height: 20%;
   border: 2px solid rgb(255, 255, 255);
-  /* border-radius: 100%; */
   display: flex;
-  /* flex: 1; */
-  /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
