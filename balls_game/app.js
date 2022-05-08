@@ -1,20 +1,42 @@
+/**
+ * function generates random number from seted parameters - ninimal and maximal posible value
+ * @param {} min number;
+ * @param {} max number;
+ * @returns random number 
+ */
+
 function rand(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/**
+ * array of random numbers
+ */
 let arrayNumbers = [];
 
+
+/**
+ * function generates array of unique unsorted numbers. As parameters function take quantyti of numbers tu 
+ * @param {*} quantity number - quantyti of numbers to generate
+ * @param {*} max number - maximal muber
+ * @returns return array of unique unsorted numbers 
+ */
 function randUniqe(quantity, max) {
+  if (max <= quantity) {
   const set = new Set();
   while (set.size < quantity) {
     set.add(Math.floor(Math.random() * max) + 1);
   }
-
+  }
   return (arrayNumbers = Array.from(set));
 }
 
+
+/**
+ * Object, whitch includes function whith has 3 cases: start timer, reset timer & stop timer
+ */
 const countTimer = {
   id: 0,
   sec: 0,
@@ -40,10 +62,17 @@ const countTimer = {
   },
 };
 
+
+
 const containerLeft = document.querySelector(".container_left");
 const containerRight = document.querySelector(".container_right");
 
 let arrayColor = [];
+
+/**
+ * function generates random number combination for random color in Hexadecimal format
+ * @returns random color in Hexadecimal format 
+ */
 
 function randColor() {
   for (let i = 1; i < 26; i++) {
@@ -52,10 +81,9 @@ function randColor() {
   return (arrayColor = arrayColor.length < 7 ? arrayColor + "0" : arrayColor);
 }
 
-console.log(arrayColor);
-
-//function for squeres production:--------------------------------------------------------------------
-
+/**
+ *  function generates squeres in page dom;
+ */
 const makeSqueres = () => {
   let div = document.createElement("div");
   containerLeft.appendChild(div);
@@ -67,7 +95,6 @@ const makeSqueres = () => {
   div2.classList.add("squereR");
 };
 
-//start producing squeres-------------------------------------------------------------------
 
 for (let i = 1; i < 26; i++) {
   makeSqueres();
@@ -76,9 +103,10 @@ for (let i = 1; i < 26; i++) {
 const squereL = document.querySelectorAll(".squereL");
 const squereR = document.querySelectorAll(".squereR");
 
-console.log(squereL);
 
-//function for making balls
+/**
+ * function generates random color and numeric circles in left side squeres
+ */
 
 const gamyba = () => {
   randUniqe(25, 25);
@@ -90,12 +118,10 @@ const gamyba = () => {
     element.appendChild(div);
     div.classList.add("kamuoliukas");
     div.style.backgroundColor = arrayColor[arrayNumbers[i]];
-    tester(div); //isijungia patikrinimas on click
-    console.log("spalva is gamybos:", i, arrayColor[i]);
+    tester(div); 
   });
 };
 
-console.log(arrayNumbers);
 
 const reset = document.querySelector(".button");
 const start = document.querySelector(".mygtukas_start");
@@ -104,6 +130,8 @@ containerRight.style.display = "none";
 containerLeft.style.display = "none";
 
 //--------------------------------------START-------------------------------------------------
+
+
 
 start.addEventListener("click", () => {
   gamyba();
@@ -129,17 +157,18 @@ const perkelimas = (x) => {
 
 let x = 1;
 let klaidos = 0;
-
 let laikmatis = document.querySelector(".laikmatis");
 
-//checking and replacing balls------------------------------------------------------------------------
+/**
+ * add event to ech ball, whith tests, if pressed ball is in correct sequence (smallest posible in left squer),
+ *  and shows if it wrong ball by 'zooming it'. When pressed last ball, generates message of game results in page DOM
+ * @param {*} element 
+ */
 
 const tester = (element) => {
   element.addEventListener("click", () => {
-    console.log(x);
     if (element.innerText == x) {
       x++;
-      console.log(element.innerText);
       perkelimas(element.innerText);
       element.remove();
 
